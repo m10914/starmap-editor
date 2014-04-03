@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+	<header>
+		<game_version>1.0.0</game_version>
+		<id>fanatics</id>
+		<title>Fanatics</title>
+		<description>Add description later.</description>
+		<enabled>1</enabled>
+	</header>
+
+	<data>
+		<map_color>0.1,0.8,0.9,0.5</map_color>
+		<icon_big>path/to/icon.png</icon_big>
+		<icon_small>path/to/icon.png</icon_small>
+		
+		<generation>
+			<stars_count_value>8</stars_count_value>
+			<stars_count_percent>0</stars_count_percent>
+			
+			<distance_from_origin_min>30</distance_from_origin_min>
+			<distance_from_origin_max>50</distance_from_origin_max>
+				
+			<capital_tech_level>50</capital_tech_level>
+			<capital_danger_level>10</capital_danger_level>
+			<capital_area_of_influence>25</capital_area_of_influence>
+		</generation>
+		
+		<!-- relations are mutual -->
+		<relations>
+			<relation>
+				<id>aliens</id>
+				<value>-10000</value>
+			</relation>
+			<relation>
+				<id>pirates</id>
+				<value>-300</value>
+			</relation>
+		</relations>
+
+	</data>
+</root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+	<header>
+		<game_version>1.0.0</game_version>
+		<id>none</id>
+		<title>(no faction)</title>
+		<description>Add description later.</description>
+		<enabled>1</enabled>
+	</header>
+
+	<data>
+		<map_color>0.5,0.8,0.5,0.5</map_color>
+		<icon_big>path/to/icon.png</icon_big>
+		<icon_small>path/to/icon.png</icon_small>
+		
+		<generation>
+			<stars_count_value>0</stars_count_value>
+			<stars_count_percent>0</stars_count_percent>
+			
+			<distance_from_origin_min>20</distance_from_origin_min>
+			<distance_from_origin_max>40</distance_from_origin_max>
+				
+			<capital_tech_level>40</capital_tech_level>
+			<capital_danger_level>5</capital_danger_level>
+			<capital_area_of_influence>25</capital_area_of_influence>
+		</generation>
+		
+		<!-- relations are mutual -->
+		<relations>
+			<relation>
+				<id>freedom</id>
+				<value>0</value>
+			</relation>
+			<relation>
+				<id>fanatics</id>
+				<value>-100</value>
+			</relation>
+			<relation>
+				<id>aliens</id>
+				<value>-10000</value>
+			</relation>
+			<relation>
+				<id>pirates</id>
+				<value>-300</value>
+			</relation>
+		</relations>
+
+	</data>
+</root>

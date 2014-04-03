@@ -1,0 +1,74 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="VEStarmapEditor.GalaxyMapControl"
+	x:Name="UserControl"
+	d:DesignWidth="480" d:DesignHeight="480">
+
+	<Grid x:Name="LayoutRoot" Background="Black">
+		<Grid x:Name="Controls" HorizontalAlignment="Left" VerticalAlignment="Top" Width="281" Margin="17,0,0,0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Label Content="Editor controls" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Padding="5,5,5,16"/>
+			<Button x:Name="GenerateButton" Content="RandomGenerate" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Panel.ZIndex="56" Grid.Row="1" ToolTip="Random generation by specified algorythm" Width="114" Margin="0,0,0,9"/>
+			<Button x:Name="CenterMap" Content="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Panel.ZIndex="56" Grid.Row="1" ToolTip="Centers canvas" Width="68" Grid.Column="1"/>
+			<Button x:Name="ScriptButton" Content="ScriptGenerate" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Panel.ZIndex="56" Grid.Row="2" ToolTip="Generate systems based on script" Width="98"/>
+			<Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" Panel.ZIndex="56" ToolTip="Removes all currently created stars, links, etc" Width="98" Grid.Row="3" Margin="0,6,0,0"/>
+		</Grid>
+		<Canvas x:Name="RootCanvas" Panel.ZIndex="-6">
+			<Canvas.Clip>
+                <RectangleGeometry x:Name="ClippingRect" Rect="0,0,1000,1000" />
+            </Canvas.Clip>
+			<Canvas x:Name="LowCanvas" Width="1000" Height="1000" HorizontalAlignment="Left" VerticalAlignment="Top">
+				<Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform x:Name="CanvasContentScaleTransform" ScaleX="1" ScaleY="1" />
+                        <TranslateTransform x:Name="CanvasContentTranslateTransform" />
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+				<Canvas.Background>
+					<ImageBrush ImageSource="Img/background.jpg" TileMode="Tile" >
+						<ImageBrush.RelativeTransform>
+							<TransformGroup>
+								<ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.2" ScaleY="0.2"/>
+								<SkewTransform CenterY="0.5" CenterX="0.5"/>
+								<RotateTransform CenterY="0.5" CenterX="0.5"/>
+								<TranslateTransform/>
+							</TransformGroup>
+						</ImageBrush.RelativeTransform>
+					</ImageBrush>
+				</Canvas.Background>
+			</Canvas>
+		</Canvas>
+		<Label x:Name="CurrentStatus" Content="CurrentStatus" VerticalAlignment="Bottom" Background="#FF555555" Height="26" BorderBrush="#FFFFFBFB" Foreground="#FFEEE2E2"/>
+		<StackPanel x:Name="ConsoleHistory" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Background="#FFBFBDBD" Margin="0,0,0,27">
+			<Label Content="Label" Style="{DynamicResource ConsoleLabelStyle}"/>
+			<Label Content="Label" Style="{DynamicResource ConsoleLabelStyle}"/>
+		</StackPanel>
+	</Grid>
+</UserControl>

@@ -1,0 +1,53 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="VEStarmapEditor.StarControl"
+	x:Name="UserControl">
+	<Canvas x:Name="LayoutRoot" Margin="-8,-8,0,0">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="VisualStateGroup">
+				<VisualState x:Name="Default">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ellipse">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="Selected">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ellipse">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ellipse">
+							<EasingThicknessKeyFrame KeyTime="0" Value="2,2,0,0"/>
+						</ThicknessAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
+							<EasingDoubleKeyFrame KeyTime="0" Value="-1.915"/>
+						</DoubleAnimationUsingKeyFrames>
+						<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse">
+							<EasingDoubleKeyFrame KeyTime="0" Value="-1.914"/>
+						</DoubleAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Image x:Name="StarIcon" Height="16" Width="16" Source="Img/Star.png" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+		<Label x:Name="TechLevel" Content="23&#xD;&#xA;" FontSize="5.333" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Margin="0,0,-25,0" Background="{x:Null}" Foreground="#FFE9FF09" Opacity="0.78"/>
+		<Label x:Name="DangerLevel" Content="23&#xA;" FontSize="5.333" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" Background="{x:Null}" Foreground="#FFFF7E7E" Opacity="0.78" Canvas.Left="19.373" Margin="-8,0,0,0"/>
+		<Ellipse x:Name="ellipse" HorizontalAlignment="Left" Height="14" Stroke="#FF849FFD" VerticalAlignment="Top" Width="14" RenderTransformOrigin="0.5,0.5" StrokeThickness="0.5" Canvas.Left="1.085" Canvas.Top="1.085" Visibility="Collapsed">
+			<Ellipse.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Ellipse.RenderTransform>
+		</Ellipse>		 
+		<Label x:Name="StarName" Content="Alderaanasd asd asd asd asd" Margin="0" FontSize="8" Background="{x:Null}" Foreground="White" Opacity="0.39" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" SnapsToDevicePixels="True" Canvas.Top="15.085" Canvas.Left="-142" HorizontalContentAlignment="Center" Width="300" Padding="0" FontFamily="Segoe UI Light"/>
+		<Label x:Name="TechLevel_Copy" Content="/&#xA;" FontSize="6.667" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Background="{x:Null}" Foreground="#FFFFFFFB" Opacity="0.78" Canvas.Left="19.253" Margin="-7,-1,0,0"/>
+	</Canvas>
+</UserControl>
